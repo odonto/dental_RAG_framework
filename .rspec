@@ -1,0 +1,3 @@
+-I app
+--format documentation
+--format html --out reports/unit_test_report.html

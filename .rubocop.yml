@@ -1,0 +1,13 @@
+AllCops:
+  Excludes:
+    - app/**
+    - config/**
+    - db/**
+    - features/**
+    - spec/**
+# Class documentation
+Documentation:
+  Enabled: false
+# UTF-8 encoding comment in class
+Encoding:
+  Enabled: false
