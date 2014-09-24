@@ -6,4 +6,4 @@ JSLint.config_path = ".jslint.yml"
 
 require File.expand_path('../config/application', __FILE__)
 
-Smokefree::Application.load_tasks
+RailsSample::Application.load_tasks

@@ -1,13 +1,32 @@
 AllCops:
-  Excludes:
-    - app/**
-    - config/**
-    - db/**
-    - features/**
-    - spec/**
-# Class documentation
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/**/*
+    - config/**/*
+    - script/**/*
+    - features/**/*
+    - spec/**/*
+    - lib/id/**/*
+CyclomaticComplexity:
+  Enabled: true
+  Max: 9
+RescueModifier:
+  Enabled: false
+StringLiterals:
+  Enabled: false
 Documentation:
   Enabled: false
-# UTF-8 encoding comment in class
 Encoding:
   Enabled: false
+AndOr:
+  Enabled: false
+LineLength:
+  Enabled: true
+  Max: 100
+ModuleFunction:
+  Description: 'Checks for usage of `extend self` in modules.'
+  Enabled: false
+MethodLength:
+  Max: 14
