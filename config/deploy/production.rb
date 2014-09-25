@@ -15,8 +15,8 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'example.com', user: 'rails_sample', roles: %w{web app db} #, my_property: :my_value # db only to one server
-server 'example2.com', user: 'rails_sample', roles: %w{web app}
+server 'example.com', user: 'homepage_client', roles: %w{web app db} #, my_property: :my_value # db only to one server
+server 'example2.com', user: 'homepage_client', roles: %w{web app}
 
 fetch(:default_env).merge!(rails_env: :production)
 

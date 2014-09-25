@@ -1,12 +1,12 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'rails_sample'
-set :repo_url, 'git@github.com:NHSChoices/rails_sample.git'
+set :application, 'homepage_client'
+set :repo_url, 'git@github.com:NHSChoices/homepage_client.git'
 
 set :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/var/apps/rails_sample'
+set :deploy_to, '/var/apps/homepage_client'
 
 secret_token = ENV['SECRET_TOKEN']
 rails_env    = ENV['RAILS_ENV']
@@ -18,7 +18,7 @@ api_key      = ENV['API_KEY']
 # set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :assets_prefix, 'rails_sample/assets'
+set :assets_prefix, 'homepage_client/assets'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.1.2'
@@ -26,9 +26,9 @@ set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rben
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
 
-unicorn_pid = "/var/apps/rails_sample/current/tmp/pids/unicorn.pid"
+unicorn_pid = "/var/apps/homepage_client/current/tmp/pids/unicorn.pid"
 set :default_env, {
-  'PATH'         => "/home/rails_sample/.rbenv/shims:$PATH",
+  'PATH'         => "/home/homepage_client/.rbenv/shims:$PATH",
   'SECRET_TOKEN' => "#{secret_token}",
 }
 

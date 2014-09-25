@@ -1,15 +1,24 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.2'
+gem 'simple_form'
+gem 'select2-rails'
+gem 'epi_js'
+
 gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'therubyracer', platforms: :ruby
+gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'      # Twitter bootstrap in sass form
+gem 'font-awesome-rails'  # Bootstrap's icons rendered as a font
+gem 'webshims-rails'
+gem 'therubyracer', platforms: :ruby
 
 gem 'unicorn'
 
 group :development do
+  gem 'thin'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
@@ -36,5 +45,6 @@ group :development, :test do
   gem 'webmock', require: false
   gem 'launchy', '~> 2.1.2'
   gem 'pry'
+  gem 'pry-rails'
   gem 'sqlite3'
 end

@@ -1,3 +1,11 @@
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require ajax_setup
+//= require bootstrap
+//= require flash_message
+//= require modal
+//= require select2
+//= require select2_init
+// require webshims/extras/modernizr-custom
+// require webshims/polyfiller
+// require pollyfill_init

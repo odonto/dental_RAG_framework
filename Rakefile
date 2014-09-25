@@ -6,4 +6,4 @@ JSLint.config_path = ".jslint.yml"
 
 require File.expand_path('../config/application', __FILE__)
 
-RailsSample::Application.load_tasks
+HomepageClient::Application.load_tasks

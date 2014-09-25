@@ -1,4 +1,11 @@
 /*
- *= require_self
- *= require_tree .
+  *= require twitter_bootstrap
+  *= require font-awesome
+  *= require select2
+  *= require select2_custom
+  *= require layout
+  *= require nav
+  *= require utilities
+  *= require buttons
+  *= require misc
  */
