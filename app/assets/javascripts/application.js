@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require ajax_setup
 //= require bootstrap
-//= require flash_message
 //= require modal
 //= require select2
 //= require select2_init
