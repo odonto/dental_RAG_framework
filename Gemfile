@@ -14,9 +14,10 @@ gem 'font-awesome-rails'  # Bootstrap's icons rendered as a font
 gem 'webshims-rails'
 gem 'therubyracer', platforms: :ruby
 
-gem 'unicorn'
-gem 'mysql2'
+gem 'rails_12factor', group: :production
 
+gem 'unicorn'
+gem 'pg'
 
 group :development do
   gem 'thin'
@@ -50,3 +51,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'sqlite3'
 end
+
+ruby '2.2.0'
