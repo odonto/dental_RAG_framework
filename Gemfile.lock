@@ -369,11 +369,7 @@ DEPENDENCIES
   mocha
   pry
   pry-rails
-<<<<<<< HEAD
-  rails (~> 4.1.2)
-=======
   rails (~> 4.2)
->>>>>>> f93ac10... First init
   rspec-rails (~> 3.0.0)
   rubocop
   sass-rails (~> 4.0.3)

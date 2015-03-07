@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
-gem 'rails', '~> 4.1.2'
-=======
 gem 'rails', '~> 4.2'
->>>>>>> f93ac10... First init
 gem 'simple_form'
 gem 'select2-rails'
 

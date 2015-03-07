@@ -1,9 +1,9 @@
-set :application, 'sample-app'
-set :repo_url, 'git@github.com:sample-app.git'
+set :application, 'dental_RAG_framework'
+set :repo_url, 'git@github.com:opendental/dental_RAG_framework.git'
 
 set :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/var/apps/sample-app'
+set :deploy_to, '/var/apps/dental_RAG_framework'
 
 rails_env    = ENV['RAILS_ENV']
 # set :format, :pretty
@@ -13,7 +13,7 @@ rails_env    = ENV['RAILS_ENV']
 # set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :assets_prefix, 'sample-app/assets'
+set :assets_prefix, 'dental_RAG_framework/assets'
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.1.5'
@@ -31,7 +31,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "sudo service unicorn_sample-app restart"
+      execute "sudo service unicorn_dental_RAG_framework restart"
     end
   end
 
