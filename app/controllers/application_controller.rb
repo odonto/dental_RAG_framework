@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   protected
 
   # def configure_permitted_parameters
-  #   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :full_name) }
+  #   devise_parameter_sanitizer.for(:sign_up) do |u|
+  #     u.permit(:email, :password, :password_confirmation, :full_name)
+  #   end
   #   devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password) }
   # end
 
@@ -20,6 +22,7 @@ class ApplicationController < ActionController::Base
   # end
 
   private
+
   def ie6_warning
     redirect_to ie6_warning_path if request.user_agent.to_s =~ /MSIE 6/
   end

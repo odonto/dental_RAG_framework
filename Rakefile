@@ -6,4 +6,4 @@ JSLint.config_path = ".jslint.yml"
 
 require File.expand_path('../config/application', __FILE__)
 
-HomepageClient::Application.load_tasks
+DentalRAG::Application.load_tasks

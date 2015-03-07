@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.2'
+<<<<<<< HEAD
+gem 'rails', '~> 4.1.2'
+=======
+gem 'rails', '~> 4.2'
+>>>>>>> f93ac10... First init
 gem 'simple_form'
 gem 'select2-rails'
-gem 'epi_js'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'coffee-rails', '~> 4.0.0'
@@ -17,11 +20,13 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'unicorn'
 
+
 group :development do
   gem 'thin'
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv-install'
   gem 'capistrano-rails'
   gem 'spring'
 end

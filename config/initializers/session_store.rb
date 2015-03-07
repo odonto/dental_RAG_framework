@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-HomepageClient::Application.config.session_store :cookie_store, key: '_homepage_client_session'
+DentalRAG::Application.config.session_store :cookie_store, key: '_dental_rag_session'

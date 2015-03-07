@@ -5,25 +5,11 @@
 <div class="jumbotron">
   <h3>
     <i class="fa fa-heart"></i>
-    Welcome to NHSChoices
+    Welcome to
   </h3>
-  <% if current_user %>
-      <p>Here are your single friends that you can try matching up:</p>
-      <% current_user.friends.ordered.in_groups_of(4) do |group| %>
-          <div class="row">
-            <% group.each do |user| %>
-                <div class="col-xs-12 col-sm-3">
-                  <% if user %>
-                      <%= image_tag user.image %>
-                      <p>
-                        <%= user.decorate.display_name %>
-                      </p>
-                  <% end %>
-                </div>
-            <% end %>
-          </div>
-      <% end %>
-  <% else %>
+  <%- if current_user %>
+      <p>Logged in</p>
+  <%= else %>
       <p>All the API calls</p>
-  <% end %>
+  <%- end %>
 </div>

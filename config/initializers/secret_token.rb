@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-HomepageClient::Application.config.secret_key_base = '07e31f511ed3322c9f16d532cdc7e728c4c64015265b32c846ada43cce7e99ee8ac6c9c180551d161dc5b7646fd6904b7d923294a6f318639528e2d55d6758b9'
+DentalRAG::Application.config.secret_key_base = '07e31f511ed3322c9f16d532cdc7e728c4c64015265b32c846ada43cce7e99ee8ac6c9c180551d161dc5b7646fd6904b7d923294a6f318639528e2d55d6758b9'

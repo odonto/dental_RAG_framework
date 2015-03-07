@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <title>NHSChoices - #{content_for(:title)}</title>
+  <title>Dental RAG Framework - #{content_for(:title)}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: :all %>
   <%= javascript_include_tag "application" %>
@@ -32,13 +32,13 @@
       <%= link_to :root, class: 'navbar-brand' do %>
           <div class="row brand">
             <div class="col-xs-12 col-sm6">
-              <%= image_tag 'choices-logo.gif', alt: ' NHS Choices', class: 'crest' %>
+              <%= image_tag 'choices-logo.gif', alt: 'Dental RAG Framework', class: 'crest' %>
             </div>
           </div>
       <% end %>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <%= navbar_link_to :root, title: "Go to branch homepage", identifier: :home do %>
+          <%= navbar_link_to :root, title: 'Go to homepage', identifier: :home do %>
             <i class="fa fa-home whitespace-top">
               Home
             </i>
@@ -86,7 +86,7 @@
 <div id="footer">
   <div class="container">
     <p>
-      &copy;<%= Date.today.year %> NHS Choices
+      &copy;<%= Date.today.year %> Dental RAG Framework
     </p>
   </div>
 </div>

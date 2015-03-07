@@ -1,13 +1,10 @@
-# Homepage Client
+# Dental RAG Framework
 
-POC for homepage using the contentful api
-A/B testing using vanity to check what the users are more drawn too
-Using Webtrends api to show LiveWell stats on the homepage
+Web-based tool for easy calculation of dental RAG scores including the capture of patient data, dentist input
 
-## Development
+Calculates Red, Amber or Green scores for each of the four following clinical domains:
 
-If you require a database, please add the settings to the database.yml and add the adaptor
-
-## Deployment
-
-Please set the deployment server 'example.com' and 'example2.com' with the help of infrastructure
+Caries
+Soft Tissue
+Periodontal Disease
+Tooth Surface Loss
