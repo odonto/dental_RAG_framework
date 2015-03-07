@@ -1,4 +1,4 @@
-appUser = "sample-app"
+appUser = "dental_RAG_framework"
 
 root = "/var/apps/#{appUser}/current"
 

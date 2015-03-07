@@ -1,5 +1,4 @@
-server 'ch-p-sample01', user: 'sample-app', roles: %w{web app db}
-server 'ch-p-sample02', user: 'sample-app', roles: %w{web app}
+server '178.62.85.99', user: 'dental-rag', roles: %w{web app db}
 
 fetch(:default_env).merge!(rails_env: :production)
 
