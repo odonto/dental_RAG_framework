@@ -1,5 +1,8 @@
 DentalRAG::Application.routes.draw do
-  root 'pages#welcome'
+
+  scope(:dental_RAG_framework) do
+
+    root 'pages#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,5 +58,6 @@ DentalRAG::Application.routes.draw do
   #     resources :products
   #   end
 
-  get '/healthcheck', to: 'pages#healthcheck', as: :healthcheck #haproxy points here
+    get '/healthcheck', to: 'pages#healthcheck', as: :healthcheck #haproxy points here
+  end
 end

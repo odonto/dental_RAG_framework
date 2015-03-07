@@ -190,6 +190,7 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.11.0)
     multi_test (0.1.2)
+    mysql2 (0.3.18)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -367,6 +368,7 @@ DEPENDENCIES
   jslint_on_rails
   launchy (~> 2.1.2)
   mocha
+  mysql2
   pry
   pry-rails
   rails (~> 4.2)

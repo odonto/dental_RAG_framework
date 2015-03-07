@@ -15,6 +15,7 @@ gem 'webshims-rails'
 gem 'therubyracer', platforms: :ruby
 
 gem 'unicorn'
+gem 'mysql2'
 
 
 group :development do
