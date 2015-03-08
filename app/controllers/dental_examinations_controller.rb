@@ -14,6 +14,13 @@ class DentalExaminationsController < ApplicationController
   # GET /dental_examinations/new
   def new
     @dental_examination = DentalExamination.new(patient: @patient)
+    @dental_examination.caries_findings_clinical = {:teeth_with_no_carious_lesions => true}
+    @dental_examination.caries_findings_patient = {
+      :caries_symptoms => false,
+      :excess_dietary_sugar => false,
+      :poor_plaque_control => true,
+      :dry_mouth => false
+    }
   end
 
   # GET /dental_examinations/1/edit
@@ -23,7 +30,6 @@ class DentalExaminationsController < ApplicationController
   # POST /dental_examinations
   def create
     @dental_examination = DentalExamination.new(dental_examination_params)
-
     if @dental_examination.save
       redirect_to @dental_examination, notice: 'Dental examination was successfully created.'
     else
@@ -59,6 +65,6 @@ class DentalExaminationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dental_examination_params
-      params.require(:dental_examination).permit(:date, :caries_findings, :tsl_findings, :perio_findings, :soft_tiss_findings, patient_attributes: :patient_id  )
+      params.require(:dental_examination).permit(:date, :caries_findings_clinical, :caries_findings_patient, :tsl_findings, :perio_findings, :soft_tiss_findings, :patient  )
     end
 end

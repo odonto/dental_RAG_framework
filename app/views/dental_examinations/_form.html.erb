@@ -1,4 +1,4 @@
-<%= simple_form_for [@patient, @dental_examination] do |f| %>
+<%= form_for [@patient, @dental_examination] do |f| %>
   <% if @dental_examination.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dental_examination.errors.count, "error") %> prohibited this dental_examination from being saved:</h2>
@@ -11,15 +11,52 @@
     </div>
   <% end %>
 
-  <%= f.input :patient, as: :select, label: 'Select the patient you want the examination for' %>
-  <%= f.input :date, label: 'Date of examination' %>
-  <%= f.input :caries_findings, label: 'Caries (Tooth Decay)' %>
-  <%= f.input :tsl_findings, label: 'Tooth Surface Loss' %>
-  <%= f.input :perio_findings, label: 'Periodontal Disease (Gum Disease)' %>
-  <%= f.input :soft_tiss_findings, label: 'Soft Tissue (Mouth Cancer)' %>
+  <div class="row">
+    <div class="col-md-12">
+        <div class="field">
+          <%= f.label :date %><br>
+          <%= f.text_field :date %>
+        </div>
+        <div class="field">
+          <%= f.label :patient %><br>
+          <%= f.collection_select :patient, Patient.all, :id, :name, include_blank: true %>
+        </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <h2>Caries (Tooth Decay)</h2>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <p>Clinical Factors</p>
+      <%- @dental_examination.caries_findings_clinical.each_pair do |factor, value| %>
+        <div class="field">
+            <%= f.label :"#{factor}" %><br>
+            <%= f.radio_button :"#{factor}", factor, checked: value %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+        <p>Patient Factors</p>
+        <%- @dental_examination.caries_findings_patient.each_pair do |factor, value| %>
+            <div class="field">
+              <%= f.label :"#{factor}" %><br>
+              <%= f.radio_button :"#{factor}", factor, checked: value %>
+            </div>
+        <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+        <p>Risk<p>
+    </div>
+  </div>
 
-  <div class="actions">
-    <%= f.submit %>
+    <%#= f.input :caries_findings, as: :check_boxes, label: 'Caries (Tooth Decay)' %>
+  <%#= f.input :tsl_findings, label: 'Tooth Surface Loss' %>
+  <%#= f.input :perio_findings, label: 'Periodontal Disease (Gum Disease)' %>
+  <%#= f.input :soft_tiss_findings, label: 'Soft Tissue (Mouth Cancer)' %>
+
+  <div class="row">
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
