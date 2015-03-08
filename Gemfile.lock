@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: d35d4bd58708c3db82aaac7b50295ff37a2d1c83
+  revision: 696d3e4c1ee355178634d14f78ccb72b8c4faf9d
   specs:
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)

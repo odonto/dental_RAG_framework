@@ -1,0 +1,37 @@
+<%= form_for(@dental_examination) do |f| %>
+  <% if @dental_examination.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dental_examination.errors.count, "error") %> prohibited this dental_examination from being saved:</h2>
+
+      <ul>
+      <% @dental_examination.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :caries_findings %><br>
+    <%= f.text_field :caries_findings %>
+  </div>
+  <div class="field">
+    <%= f.label :tsl_findings %><br>
+    <%= f.text_field :tsl_findings %>
+  </div>
+  <div class="field">
+    <%= f.label :perio_findings %><br>
+    <%= f.text_field :perio_findings %>
+  </div>
+  <div class="field">
+    <%= f.label :soft_tiss_findings %><br>
+    <%= f.text_field :soft_tiss_findings %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

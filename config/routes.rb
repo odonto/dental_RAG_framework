@@ -1,5 +1,9 @@
 DentalRAG::Application.routes.draw do
 
+  resources :dental_examinations
+
+  resources :patients
+
   scope(:dental_RAG_framework) do
 
     root 'pages#welcome'

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @dental_examination.date %>
+</p>
+
+<p>
+  <strong>Caries findings:</strong>
+  <%= @dental_examination.caries_findings %>
+</p>
+
+<p>
+  <strong>Tsl findings:</strong>
+  <%= @dental_examination.tsl_findings %>
+</p>
+
+<p>
+  <strong>Perio findings:</strong>
+  <%= @dental_examination.perio_findings %>
+</p>
+
+<p>
+  <strong>Soft tiss findings:</strong>
+  <%= @dental_examination.soft_tiss_findings %>
+</p>
+
+<%= link_to 'Edit', edit_dental_examination_path(@dental_examination) %> |
+<%= link_to 'Back', dental_examinations_path %>
