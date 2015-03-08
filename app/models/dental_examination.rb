@@ -6,5 +6,6 @@ class DentalExamination
   field :tsl_findings, type: Hash
   field :perio_findings, type: Hash
   field :soft_tiss_findings, type: Hash
-  embedded_in :patient 
+  embedded_in :patient
+  embeds_one :rag_score
 end
