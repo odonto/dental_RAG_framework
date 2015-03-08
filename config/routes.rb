@@ -1,5 +1,7 @@
 DentalRAG::Application.routes.draw do
 
+  resources :rag_scores
+
   resources :patients do
     resources :dental_examinations
   end

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rag Scores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Version</th>
+      <th>Caries score</th>
+      <th>Tsl score</th>
+      <th>Perio score</th>
+      <th>Soft tiss score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rag_scores.each do |rag_score| %>
+      <tr>
+        <td><%= rag_score.date %></td>
+        <td><%= rag_score.version %></td>
+        <td><%= rag_score.caries_score %></td>
+        <td><%= rag_score.tsl_score %></td>
+        <td><%= rag_score.perio_score %></td>
+        <td><%= rag_score.soft_tiss_score %></td>
+        <td><%= link_to 'Show', rag_score %></td>
+        <td><%= link_to 'Edit', edit_rag_score_path(rag_score) %></td>
+        <td><%= link_to 'Destroy', rag_score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rag score', new_rag_score_path %>

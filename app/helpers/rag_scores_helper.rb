@@ -1,0 +1,2 @@
+module RagScoresHelper
+end
