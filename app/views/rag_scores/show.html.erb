@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @rag_score.date %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @rag_score.version %>
+</p>
+
+<p>
+  <strong>Caries score:</strong>
+  <%= @rag_score.caries_score %>
+</p>
+
+<p>
+  <strong>Tsl score:</strong>
+  <%= @rag_score.tsl_score %>
+</p>
+
+<p>
+  <strong>Perio score:</strong>
+  <%= @rag_score.perio_score %>
+</p>
+
+<p>
+  <strong>Soft tiss score:</strong>
+  <%= @rag_score.soft_tiss_score %>
+</p>
+
+<%= link_to 'Edit', edit_rag_score_path(@rag_score) %> |
+<%= link_to 'Back', rag_scores_path %>
