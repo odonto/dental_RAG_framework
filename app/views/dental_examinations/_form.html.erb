@@ -1,4 +1,4 @@
-<%= form_for(@dental_examination) do |f| %>
+<%= simple_form_for [@patient, @dental_examination] do |f| %>
   <% if @dental_examination.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dental_examination.errors.count, "error") %> prohibited this dental_examination from being saved:</h2>
@@ -11,26 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </div>
-  <div class="field">
-    <%= f.label :caries_findings %><br>
-    <%= f.text_field :caries_findings %>
-  </div>
-  <div class="field">
-    <%= f.label :tsl_findings %><br>
-    <%= f.text_field :tsl_findings %>
-  </div>
-  <div class="field">
-    <%= f.label :perio_findings %><br>
-    <%= f.text_field :perio_findings %>
-  </div>
-  <div class="field">
-    <%= f.label :soft_tiss_findings %><br>
-    <%= f.text_field :soft_tiss_findings %>
-  </div>
+  <%= f.input :patient, as: :select, label: 'Select the patient you want the examination for' %>
+  <%= f.input :date, label: 'Date of examination' %>
+  <%= f.input :caries_findings, label: 'Caries (Tooth Decay)' %>
+  <%= f.input :tsl_findings, label: 'Tooth Surface Loss' %>
+  <%= f.input :perio_findings, label: 'Periodontal Disease (Gum Disease)' %>
+  <%= f.input :soft_tiss_findings, label: 'Soft Tissue (Mouth Cancer)' %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

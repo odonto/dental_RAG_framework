@@ -17,7 +17,9 @@
       <tr>
         <td><%= patient.name %></td>
         <td><%= patient.nhs_number %></td>
-        <td><%= patient.age %></td>
+        <td><%= patient.year_of_birth %></td>
+
+        <td><%= link_to 'New Examination', new_patient_dental_examination_path(patient_id: patient.id) %></td>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

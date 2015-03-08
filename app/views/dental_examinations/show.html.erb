@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Patient:</strong>
+  <%= @dental_examination.patient %>
+</p>
+
+
+<p>
   <strong>Date:</strong>
   <%= @dental_examination.date %>
 </p>
@@ -26,4 +32,4 @@
 </p>
 
 <%= link_to 'Edit', edit_dental_examination_path(@dental_examination) %> |
-<%= link_to 'Back', dental_examinations_path %>
+<%= link_to 'Back', patient_dental_examinations_path %>

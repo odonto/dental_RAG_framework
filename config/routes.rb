@@ -1,8 +1,8 @@
 DentalRAG::Application.routes.draw do
 
-  resources :dental_examinations
-
-  resources :patients
+  resources :patients do
+    resources :dental_examinations
+  end
 
   scope(:dental_RAG_framework) do
 

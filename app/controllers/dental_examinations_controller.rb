@@ -1,4 +1,5 @@
 class DentalExaminationsController < ApplicationController
+  before_filter :get_patient
   before_action :set_dental_examination, only: [:show, :edit, :update, :destroy]
 
   # GET /dental_examinations
@@ -12,7 +13,7 @@ class DentalExaminationsController < ApplicationController
 
   # GET /dental_examinations/new
   def new
-    @dental_examination = DentalExamination.new
+    @dental_examination = DentalExamination.new(patient: @patient)
   end
 
   # GET /dental_examinations/1/edit
@@ -45,6 +46,11 @@ class DentalExaminationsController < ApplicationController
     redirect_to dental_examinations_url, notice: 'Dental examination was successfully destroyed.'
   end
 
+  protected
+    def get_patient
+      @patient = Patient.find(params[:patient_id])
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dental_examination
@@ -53,6 +59,6 @@ class DentalExaminationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def dental_examination_params
-      params.require(:dental_examination).permit(:date, :caries_findings, :tsl_findings, :perio_findings, :soft_tiss_findings)
+      params.require(:dental_examination).permit(:date, :caries_findings, :tsl_findings, :perio_findings, :soft_tiss_findings, patient_attributes: :patient_id  )
     end
 end
