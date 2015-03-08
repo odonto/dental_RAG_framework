@@ -1,6 +1,29 @@
 class RagScoresController < ApplicationController
   before_action :set_rag_score, only: [:show, :edit, :update, :destroy]
 
+  def get_rag_score           # this method is called on a dental_examination object
+    @caries_score = :green          # default caries_score is :green 
+
+    if @dental_examination.caries_findings_clinical[:teeth_with_carious_lesions] || @dental_examination.caries_findings_patient[:caries_symptoms]
+      @caries_score = :red
+    end
+
+    if @dental_examination.caries_findings_patient[:excess_dietary_sugar] || @dental_examination.caries_findings_patient[:poor_plaque_control]
+      @caries_score = :amber
+    end
+
+    return @caries_score
+  end
+
+  def get_advice
+    advice = {
+      red: "",
+      amber: "",
+      green: "",
+    }
+    return advice[#{caries_score}]
+  end
+
   # GET /rag_scores
   def index
     @rag_scores = RagScore.all
