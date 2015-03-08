@@ -15,8 +15,7 @@ gem 'webshims-rails'
 gem 'therubyracer', platforms: :ruby
 
 gem 'unicorn'
-gem 'mysql2'
-
+gem 'mongoid'
 
 group :development do
   gem 'thin'
@@ -48,6 +47,4 @@ group :development, :test do
   gem 'launchy', '~> 2.1.2'
   gem 'pry'
   gem 'pry-rails'
-  gem 'sqlite3'
-  gem 'mongoid'
 end
