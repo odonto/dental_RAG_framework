@@ -3,6 +3,12 @@ DentalRAG::Application.routes.draw do
   scope(:dental_RAG_framework) do
 
     root 'pages#welcome'
+    resources :patients do
+      resources :examinations do
+        resources :categories
+      end
+    end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

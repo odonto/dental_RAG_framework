@@ -11,6 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150308172520) do
+
+  create_table "advices", force: :cascade do |t|
+    t.string   "category_factory_id"
+    t.string   "outcome_id"
+    t.string   "text"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "clinical_factors"
+    t.text     "patient_factors"
+  end
+
+  create_table "category_factors", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "factor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "examinations", force: :cascade do |t|
+    t.datetime "date_taken"
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "factors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "outcomes", force: :cascade do |t|
+    t.integer  "rule_id"
+    t.string   "risk"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "NHS_number"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "year_of_birth"
+  end
 
 end

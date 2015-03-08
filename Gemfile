@@ -17,7 +17,11 @@ gem 'therubyracer', platforms: :ruby
 gem 'rails_12factor', group: :production
 
 gem 'unicorn'
+gem 'annotate'
 gem 'pg'
+
+gem 'better_errors'
+gem 'binding_of_caller'
 
 group :development do
   gem 'thin'

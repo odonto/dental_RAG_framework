@@ -1,0 +1,62 @@
+<%= simple_form_for [@patient, @examination] do |f| %>
+    <% if @examination.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@examination.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+          <ul>
+            <% @examination.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :date_taken %>
+        <%= f.input :patient, as: :select, collection: Patient.all, selected: @patient %>
+      </div>
+    </div>
+
+    <%= f.simple_fields_for :categories do |category| %>
+        <div class="row">
+          <div class="col-md-6">
+            <h2><%= category.object.name %></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h3>Clinical Factors</h3>
+            <%= category.input :clinical_factors,
+                               as: :radio_buttons,
+                               label: false,
+                               collection: category.object.clinical_factors,
+                               label_method: ->(obj){ t("factors.labels.#{obj[0]}") },
+                               hint: ->(obj){ t("factors.hints.#{obj[0]}") rescue ''}
+            %>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h3>Patient Factors</h3>
+            <%= category.input :patient_factors,
+                               as: :check_boxes,
+                               label: false,
+                               collection: category.object.patient_factors,
+                               label_method: ->(obj){ t("factors.labels.#{obj[0]}") },
+                               hint: ->(obj){ t("factors.hints.#{obj[0]}") rescue ''}
+            %>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <h3>Risk</h3>
+            <span id="<%= category.object.name %>_result" class="label label-success">green</span>
+          </div>
+        </div>
+    <% end %>
+
+    <div class="row">
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div>
+<% end %>
