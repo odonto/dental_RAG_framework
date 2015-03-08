@@ -10,14 +10,20 @@
       </ul>
     </div>
   <% end %>
-
-  <%= f.input :patient, as: :select, label: 'Select the patient you want the examination for' %>
-  <%= f.input :date, label: 'Date of examination' %>
-  <%= f.input :caries_findings, label: 'Caries (Tooth Decay)' %>
-  <%= f.input :tsl_findings, label: 'Tooth Surface Loss' %>
-  <%= f.input :perio_findings, label: 'Periodontal Disease (Gum Disease)' %>
-  <%= f.input :soft_tiss_findings, label: 'Soft Tissue (Mouth Cancer)' %>
-
+<table>
+  <tr>
+    <td><%= f.input :patient, as: :select, label: 'Select the patient you want the examination for' %></td>
+    <td><%= f.input :date, label: 'Date of examination' %></td>
+  </tr>
+  <tr>
+    <td><%= f.input :caries_findings, label: 'Caries (Tooth Decay)' %></td>
+    <td><%= f.input :tsl_findings, label: 'Tooth Surface Loss' %></td>
+  </tr>
+  <tr>
+    <td><%= f.input :perio_findings, label: 'Periodontal Disease (Gum Disease)' %></td>
+    <td><%= f.input :soft_tiss_findings, label: 'Soft Tissue (Mouth Cancer)' %></td>
+  </tr>
+</table>
 
   <div class="actions">
     <%= f.submit %>
